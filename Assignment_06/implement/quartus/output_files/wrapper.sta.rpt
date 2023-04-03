@@ -1,0 +1,1257 @@
+TimeQuest Timing Analyzer report for wrapper
+Sun Mar 05 13:10:09 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'CLOCK_50'
+ 24. Fast Model Hold: 'CLOCK_50'
+ 25. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; wrapper                                                           ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                           ;
++------------+-----------------+------------+-------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                  ;
++------------+-----------------+------------+-------------------------------------------------------+
+; 267.09 MHz ; 260.01 MHz      ; CLOCK_50   ; limit due to high minimum pulse width violation (tch) ;
++------------+-----------------+------------+-------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -2.744 ; -173.329      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.423 ; -120.916           ;
++----------+--------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                    ;
++--------+------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[27] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.744 ; cal_log2:dut|tmp_x[12] ; cal_log2:dut|tmp_sq[26] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.746      ;
+; -2.664 ; cal_log2:dut|index[0]  ; cal_log2:dut|index[15]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.697      ;
+; -2.659 ; cal_log2:dut|index[3]  ; cal_log2:dut|index[15]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.695      ;
+; -2.592 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_x[1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 3.632      ;
+; -2.592 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_x[2]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 3.632      ;
+; -2.592 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_x[7]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 3.632      ;
+; -2.592 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_x[11]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 3.632      ;
+; -2.577 ; cal_log2:dut|index[1]  ; cal_log2:dut|index[15]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.610      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[27] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.569 ; cal_log2:dut|tmp_x[9]  ; cal_log2:dut|tmp_sq[26] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.571      ;
+; -2.567 ; cal_log2:dut|index[0]  ; cal_log2:dut|index[14]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.600      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[27] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[27] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.566 ; cal_log2:dut|tmp_x[0]  ; cal_log2:dut|tmp_sq[26] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.045      ; 3.564      ;
+; -2.566 ; cal_log2:dut|tmp_x[15] ; cal_log2:dut|tmp_sq[26] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.568      ;
+; -2.562 ; cal_log2:dut|index[3]  ; cal_log2:dut|index[14]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 3.598      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[27] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.561 ; cal_log2:dut|tmp_x[13] ; cal_log2:dut|tmp_sq[26] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.563      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[19] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[20] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[24] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[25] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
+; -2.557 ; cal_log2:dut|tmp_x[4]  ; cal_log2:dut|tmp_sq[27] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.049      ; 3.559      ;
++--------+------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                 ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; cal_log2:dut|count[1]                 ; cal_log2:dut|count[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|count[3]                 ; cal_log2:dut|count[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|count[2]                 ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|tmp_x[15]                ; cal_log2:dut|tmp_x[15]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|tmp_x[14]                ; cal_log2:dut|tmp_x[14]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|current_state.FIND_K     ; cal_log2:dut|current_state.FIND_K     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|count[0]                 ; cal_log2:dut|count[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[0]                ; cal_log2:dut|log2_m[0]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[1]                ; cal_log2:dut|log2_m[1]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[2]                ; cal_log2:dut|log2_m[2]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[3]                ; cal_log2:dut|log2_m[3]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[4]                ; cal_log2:dut|log2_m[4]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[5]                ; cal_log2:dut|log2_m[5]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[6]                ; cal_log2:dut|log2_m[6]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[7]                ; cal_log2:dut|log2_m[7]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[8]                ; cal_log2:dut|log2_m[8]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[9]                ; cal_log2:dut|log2_m[9]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[10]               ; cal_log2:dut|log2_m[10]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cal_log2:dut|log2_m[11]               ; cal_log2:dut|log2_m[11]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.527 ; cal_log2:dut|log2_m[13]               ; cal_log2:dut|log2_m[13]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.793      ;
+; 0.531 ; cal_log2:dut|log2_m[14]               ; cal_log2:dut|log2_m[14]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.797      ;
+; 0.545 ; cal_log2:dut|log2_m[15]               ; cal_log2:dut|log2_m[15]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.811      ;
+; 0.557 ; cal_log2:dut|current_state.FIND_K     ; cal_log2:dut|current_state.SQUARE     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.823      ;
+; 0.580 ; cal_log2:dut|count[0]                 ; cal_log2:dut|count[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.846      ;
+; 0.677 ; cal_log2:dut|tmp_x[0]                 ; cal_log2:dut|tmp_x[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.943      ;
+; 0.684 ; cal_log2:dut|current_state.SQUARE     ; cal_log2:dut|current_state.DIV_BIT    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.950      ;
+; 0.745 ; cal_log2:dut|current_state.IDLE       ; cal_log2:dut|current_state.PRE_FIND_K ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.013      ;
+; 0.840 ; cal_log2:dut|index[3]                 ; cal_log2:dut|index[15]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.106      ;
+; 0.841 ; cal_log2:dut|log2_m[12]               ; cal_log2:dut|log2_m[12]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.107      ;
+; 0.854 ; cal_log2:dut|tmp_x[4]                 ; cal_log2:dut|tmp_x[5]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.120      ;
+; 0.930 ; cal_log2:dut|tmp_x[9]                 ; cal_log2:dut|tmp_x[10]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.196      ;
+; 0.963 ; cal_log2:dut|log2_m[2]                ; cal_log2:dut|y_o[2]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.225      ;
+; 0.966 ; cal_log2:dut|tmp_x[2]                 ; cal_log2:dut|tmp_x[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.228      ;
+; 0.973 ; cal_log2:dut|count[2]                 ; cal_log2:dut|count[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.239      ;
+; 0.980 ; cal_log2:dut|log2_m[0]                ; cal_log2:dut|y_o[0]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.247      ;
+; 0.987 ; cal_log2:dut|log2_m[9]                ; cal_log2:dut|y_o[9]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.249      ;
+; 0.991 ; cal_log2:dut|log2_m[5]                ; cal_log2:dut|y_o[5]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.253      ;
+; 0.992 ; cal_log2:dut|log2_m[1]                ; cal_log2:dut|y_o[1]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.254      ;
+; 0.995 ; cal_log2:dut|log2_m[3]                ; cal_log2:dut|y_o[3]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.257      ;
+; 0.999 ; cal_log2:dut|log2_m[4]                ; cal_log2:dut|y_o[4]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.261      ;
+; 0.999 ; cal_log2:dut|log2_m[8]                ; cal_log2:dut|y_o[8]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.261      ;
+; 1.000 ; cal_log2:dut|log2_m[10]               ; cal_log2:dut|y_o[10]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.262      ;
+; 1.006 ; cal_log2:dut|tmp_x[8]                 ; cal_log2:dut|tmp_x[9]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.272      ;
+; 1.006 ; cal_log2:dut|log2_m[13]               ; cal_log2:dut|y_o[13]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.268      ;
+; 1.016 ; cal_log2:dut|current_state.IDLE       ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.284      ;
+; 1.019 ; cal_log2:dut|current_state.FIND_LOG2  ; cal_log2:dut|count[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.281      ;
+; 1.024 ; cal_log2:dut|log2_m[7]                ; cal_log2:dut|y_o[7]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.291      ;
+; 1.026 ; cal_log2:dut|log2_m[11]               ; cal_log2:dut|y_o[11]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.293      ;
+; 1.029 ; cal_log2:dut|index[10]                ; cal_log2:dut|y_o[10]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.301      ;
+; 1.031 ; cal_log2:dut|index[0]                 ; cal_log2:dut|index[12]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.297      ;
+; 1.037 ; cal_log2:dut|current_state.PRE_FIND_K ; cal_log2:dut|current_state.FIND_K     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 1.307      ;
+; 1.069 ; cal_log2:dut|tmp_x[1]                 ; cal_log2:dut|tmp_x[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.335      ;
+; 1.099 ; cal_log2:dut|tmp_x[10]                ; cal_log2:dut|tmp_x[11]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 1.369      ;
+; 1.106 ; cal_log2:dut|count[3]                 ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.372      ;
+; 1.108 ; cal_log2:dut|current_state.FIND_K     ; cal_log2:dut|tmp_x[9]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.375      ;
+; 1.114 ; cal_log2:dut|tmp_x[5]                 ; cal_log2:dut|tmp_x[4]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.380      ;
+; 1.199 ; cal_log2:dut|tmp_x[14]                ; cal_log2:dut|current_state.FIND_K     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.464      ;
+; 1.230 ; cal_log2:dut|index[2]                 ; cal_log2:dut|index[14]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.003     ; 1.493      ;
+; 1.230 ; cal_log2:dut|index[15]                ; cal_log2:dut|y_o[15]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.009      ; 1.505      ;
+; 1.235 ; cal_log2:dut|count[0]                 ; cal_log2:dut|count[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.501      ;
+; 1.241 ; cal_log2:dut|tmp_x[1]                 ; cal_log2:dut|tmp_x[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.507      ;
+; 1.245 ; cal_log2:dut|tmp_x[6]                 ; cal_log2:dut|tmp_x[7]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 1.515      ;
+; 1.245 ; cal_log2:dut|tmp_x[3]                 ; cal_log2:dut|tmp_x[4]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.511      ;
+; 1.247 ; cal_log2:dut|count[1]                 ; cal_log2:dut|count[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.513      ;
+; 1.250 ; cal_log2:dut|index[1]                 ; cal_log2:dut|index[13]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.003     ; 1.513      ;
+; 1.257 ; cal_log2:dut|count[0]                 ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.523      ;
+; 1.263 ; cal_log2:dut|count[1]                 ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.529      ;
+; 1.267 ; cal_log2:dut|index[6]                 ; cal_log2:dut|y_o[6]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.539      ;
+; 1.270 ; cal_log2:dut|log2_m[14]               ; cal_log2:dut|y_o[14]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.532      ;
+; 1.271 ; cal_log2:dut|log2_m[12]               ; cal_log2:dut|y_o[12]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.533      ;
+; 1.279 ; cal_log2:dut|tmp_x[14]                ; cal_log2:dut|current_state.SQUARE     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.544      ;
+; 1.280 ; cal_log2:dut|log2_m[6]                ; cal_log2:dut|y_o[6]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.006     ; 1.540      ;
+; 1.287 ; cal_log2:dut|index[0]                 ; cal_log2:dut|y_o[0]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.559      ;
+; 1.287 ; cal_log2:dut|current_state.IDLE       ; cal_log2:dut|log2_m[6]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.555      ;
+; 1.292 ; cal_log2:dut|log2_m[15]               ; cal_log2:dut|y_o[15]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.554      ;
+; 1.298 ; cal_log2:dut|index[7]                 ; cal_log2:dut|y_o[7]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.570      ;
+; 1.305 ; cal_log2:dut|count[2]                 ; cal_log2:dut|log2_m[6]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.571      ;
+; 1.305 ; cal_log2:dut|index[2]                 ; cal_log2:dut|y_o[2]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.577      ;
+; 1.306 ; cal_log2:dut|tmp_sq[25]               ; cal_log2:dut|tmp_x[13]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.049     ; 1.523      ;
+; 1.308 ; cal_log2:dut|count[2]                 ; cal_log2:dut|current_state.FIND_LOG2  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 1.578      ;
+; 1.308 ; cal_log2:dut|index[4]                 ; cal_log2:dut|y_o[4]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.580      ;
+; 1.320 ; cal_log2:dut|current_state.FIND_LOG2  ; cal_log2:dut|count[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.582      ;
+; 1.322 ; cal_log2:dut|tmp_x[13]                ; cal_log2:dut|current_state.FIND_K     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.587      ;
+; 1.325 ; cal_log2:dut|current_state.FIND_LOG2  ; cal_log2:dut|count[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.587      ;
+; 1.325 ; cal_log2:dut|current_state.FIND_LOG2  ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.587      ;
+; 1.328 ; cal_log2:dut|current_state.FIND_K     ; cal_log2:dut|index[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.016     ; 1.578      ;
+; 1.330 ; cal_log2:dut|index[1]                 ; cal_log2:dut|y_o[1]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 1.602      ;
+; 1.337 ; cal_log2:dut|current_state.IDLE       ; cal_log2:dut|log2_m[14]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.603      ;
+; 1.338 ; cal_log2:dut|current_state.IDLE       ; cal_log2:dut|log2_m[15]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.604      ;
+; 1.343 ; cal_log2:dut|tmp_sq[24]               ; cal_log2:dut|tmp_x[12]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.049     ; 1.560      ;
+; 1.343 ; cal_log2:dut|current_state.FIND_K     ; cal_log2:dut|index[12]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.016     ; 1.593      ;
+; 1.346 ; cal_log2:dut|log2_m[2]                ; cal_log2:dut|y_o[3]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.608      ;
+; 1.363 ; cal_log2:dut|log2_m[0]                ; cal_log2:dut|y_o[1]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.630      ;
+; 1.364 ; cal_log2:dut|current_state.IDLE       ; cal_log2:dut|log2_m[12]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.630      ;
+; 1.368 ; cal_log2:dut|tmp_x[13]                ; cal_log2:dut|current_state.SQUARE     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.633      ;
+; 1.374 ; cal_log2:dut|log2_m[9]                ; cal_log2:dut|y_o[10]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.636      ;
+; 1.378 ; cal_log2:dut|log2_m[5]                ; cal_log2:dut|y_o[6]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.640      ;
+; 1.379 ; cal_log2:dut|log2_m[1]                ; cal_log2:dut|y_o[2]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.641      ;
+; 1.382 ; cal_log2:dut|log2_m[8]                ; cal_log2:dut|y_o[9]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.644      ;
+; 1.382 ; cal_log2:dut|log2_m[4]                ; cal_log2:dut|y_o[5]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.644      ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                                ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------------------+
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[12]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[12]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[13]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[13]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[14]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[14]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[15]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[15]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[16]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[16]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[17]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[17]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[18]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[18]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[19]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[19]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[20]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[20]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[21]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[21]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[22]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[22]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[23]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[23]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[24]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[24]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[25]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[25]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[26]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[26]               ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[27]               ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[27]               ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|count[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|count[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|count[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|count[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|count[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|count[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|count[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|count[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.DIV_BIT    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.DIV_BIT    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.FIND_K     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.FIND_K     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.FIND_LOG2  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.FIND_LOG2  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.IDLE       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.IDLE       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.PRE_FIND_K ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.PRE_FIND_K ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.SQUARE     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.SQUARE     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[10]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[10]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[11]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[11]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[12]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[12]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[13]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[13]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[14]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[14]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[15]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[15]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[4]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[4]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[5]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[5]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[6]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[6]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[7]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[7]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[8]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[8]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[9]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[9]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[10]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[10]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[11]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[11]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[12]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[12]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[13]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[13]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[14]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[14]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[15]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[15]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[1]                ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 5.766  ; 5.766  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; 1.347  ; 1.347  ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 1.626  ; 1.626  ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; 0.778  ; 0.778  ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; 1.138  ; 1.138  ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; -0.171 ; -0.171 ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; 1.254  ; 1.254  ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; -0.022 ; -0.022 ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; 2.750  ; 2.750  ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; 1.130  ; 1.130  ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; 2.267  ; 2.267  ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; 0.680  ; 0.680  ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; 1.618  ; 1.618  ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; 1.076  ; 1.076  ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; 5.738  ; 5.738  ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; 5.766  ; 5.766  ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; 5.433  ; 5.433  ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 0.401  ; 0.401  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; -1.117 ; -1.117 ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; -1.396 ; -1.396 ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; -0.548 ; -0.548 ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; -0.908 ; -0.908 ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; 0.401  ; 0.401  ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; -1.024 ; -1.024 ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; 0.252  ; 0.252  ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; -2.520 ; -2.520 ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; -0.900 ; -0.900 ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; -2.037 ; -2.037 ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; -0.450 ; -0.450 ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; -1.388 ; -1.388 ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; -0.846 ; -0.846 ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; -5.508 ; -5.508 ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; -5.536 ; -5.536 ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; -5.203 ; -5.203 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 8.368 ; 8.368 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 8.364 ; 8.364 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 8.368 ; 8.368 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 8.273 ; 8.273 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 7.605 ; 7.605 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 8.284 ; 8.284 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 8.341 ; 8.341 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 8.267 ; 8.267 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 8.233 ; 8.233 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 6.639 ; 6.639 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 6.695 ; 6.695 ; Rise       ; CLOCK_50        ;
+;  LEDR[10] ; CLOCK_50   ; 6.648 ; 6.648 ; Rise       ; CLOCK_50        ;
+;  LEDR[11] ; CLOCK_50   ; 6.646 ; 6.646 ; Rise       ; CLOCK_50        ;
+;  LEDR[12] ; CLOCK_50   ; 6.685 ; 6.685 ; Rise       ; CLOCK_50        ;
+;  LEDR[13] ; CLOCK_50   ; 6.691 ; 6.691 ; Rise       ; CLOCK_50        ;
+;  LEDR[14] ; CLOCK_50   ; 6.948 ; 6.948 ; Rise       ; CLOCK_50        ;
+;  LEDR[15] ; CLOCK_50   ; 6.942 ; 6.942 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 6.639 ; 6.639 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 8.364 ; 8.364 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 8.368 ; 8.368 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 8.273 ; 8.273 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 7.605 ; 7.605 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 8.284 ; 8.284 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 8.341 ; 8.341 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 8.267 ; 8.267 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 8.233 ; 8.233 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 6.639 ; 6.639 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 6.695 ; 6.695 ; Rise       ; CLOCK_50        ;
+;  LEDR[10] ; CLOCK_50   ; 6.648 ; 6.648 ; Rise       ; CLOCK_50        ;
+;  LEDR[11] ; CLOCK_50   ; 6.646 ; 6.646 ; Rise       ; CLOCK_50        ;
+;  LEDR[12] ; CLOCK_50   ; 6.685 ; 6.685 ; Rise       ; CLOCK_50        ;
+;  LEDR[13] ; CLOCK_50   ; 6.691 ; 6.691 ; Rise       ; CLOCK_50        ;
+;  LEDR[14] ; CLOCK_50   ; 6.948 ; 6.948 ; Rise       ; CLOCK_50        ;
+;  LEDR[15] ; CLOCK_50   ; 6.942 ; 6.942 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -0.704 ; -23.966       ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.519 ; -123.988           ;
++----------+--------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                            ;
++--------+---------------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -0.704 ; cal_log2:dut|index[0]           ; cal_log2:dut|index[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.732      ;
+; -0.688 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.724      ;
+; -0.688 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.724      ;
+; -0.688 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.724      ;
+; -0.688 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.724      ;
+; -0.685 ; cal_log2:dut|index[3]           ; cal_log2:dut|index[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.717      ;
+; -0.669 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.705      ;
+; -0.669 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.705      ;
+; -0.669 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.705      ;
+; -0.669 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.705      ;
+; -0.660 ; cal_log2:dut|index[1]           ; cal_log2:dut|index[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.688      ;
+; -0.655 ; cal_log2:dut|index[0]           ; cal_log2:dut|index[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.683      ;
+; -0.644 ; cal_log2:dut|index[2]           ; cal_log2:dut|index[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.672      ;
+; -0.636 ; cal_log2:dut|index[3]           ; cal_log2:dut|index[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.668      ;
+; -0.619 ; cal_log2:dut|index[0]           ; cal_log2:dut|index[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.647      ;
+; -0.616 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 1.655      ;
+; -0.616 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 1.655      ;
+; -0.616 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 1.655      ;
+; -0.616 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 1.655      ;
+; -0.611 ; cal_log2:dut|index[1]           ; cal_log2:dut|index[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.639      ;
+; -0.601 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.637      ;
+; -0.601 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.637      ;
+; -0.601 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.637      ;
+; -0.601 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.637      ;
+; -0.600 ; cal_log2:dut|index[3]           ; cal_log2:dut|index[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.632      ;
+; -0.597 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 1.637      ;
+; -0.597 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 1.637      ;
+; -0.597 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 1.637      ;
+; -0.597 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 1.637      ;
+; -0.595 ; cal_log2:dut|index[2]           ; cal_log2:dut|index[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.623      ;
+; -0.592 ; cal_log2:dut|index[0]           ; cal_log2:dut|index[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.624      ;
+; -0.578 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.610      ;
+; -0.578 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.610      ;
+; -0.578 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.610      ;
+; -0.578 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.610      ;
+; -0.578 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.610      ;
+; -0.578 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.610      ;
+; -0.578 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.610      ;
+; -0.578 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.610      ;
+; -0.578 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.610      ;
+; -0.575 ; cal_log2:dut|index[1]           ; cal_log2:dut|index[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.603      ;
+; -0.573 ; cal_log2:dut|index[3]           ; cal_log2:dut|index[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.609      ;
+; -0.567 ; cal_log2:dut|index[4]           ; cal_log2:dut|index[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.595      ;
+; -0.559 ; cal_log2:dut|index[2]           ; cal_log2:dut|index[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.587      ;
+; -0.559 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.591      ;
+; -0.559 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.591      ;
+; -0.559 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.591      ;
+; -0.559 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.591      ;
+; -0.559 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.591      ;
+; -0.559 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.591      ;
+; -0.559 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.591      ;
+; -0.559 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.591      ;
+; -0.559 ; cal_log2:dut|tmp_x[12]          ; cal_log2:dut|tmp_x[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.591      ;
+; -0.556 ; cal_log2:dut|tmp_x[14]          ; cal_log2:dut|tmp_x[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.592      ;
+; -0.556 ; cal_log2:dut|tmp_x[14]          ; cal_log2:dut|tmp_x[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.592      ;
+; -0.556 ; cal_log2:dut|tmp_x[14]          ; cal_log2:dut|tmp_x[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.592      ;
+; -0.556 ; cal_log2:dut|tmp_x[14]          ; cal_log2:dut|tmp_x[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.592      ;
+; -0.548 ; cal_log2:dut|index[1]           ; cal_log2:dut|index[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.580      ;
+; -0.547 ; cal_log2:dut|count[2]           ; cal_log2:dut|tmp_x[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 1.586      ;
+; -0.547 ; cal_log2:dut|count[2]           ; cal_log2:dut|tmp_x[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 1.586      ;
+; -0.547 ; cal_log2:dut|count[2]           ; cal_log2:dut|tmp_x[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 1.586      ;
+; -0.547 ; cal_log2:dut|count[2]           ; cal_log2:dut|tmp_x[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 1.586      ;
+; -0.536 ; cal_log2:dut|index[5]           ; cal_log2:dut|index[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.564      ;
+; -0.532 ; cal_log2:dut|index[2]           ; cal_log2:dut|index[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.564      ;
+; -0.519 ; cal_log2:dut|index[0]           ; cal_log2:dut|index[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.551      ;
+; -0.518 ; cal_log2:dut|index[4]           ; cal_log2:dut|index[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.546      ;
+; -0.506 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 1.541      ;
+; -0.506 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 1.541      ;
+; -0.506 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 1.541      ;
+; -0.506 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 1.541      ;
+; -0.506 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 1.541      ;
+; -0.506 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 1.541      ;
+; -0.506 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 1.541      ;
+; -0.506 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 1.541      ;
+; -0.506 ; cal_log2:dut|count[3]           ; cal_log2:dut|tmp_x[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 1.541      ;
+; -0.501 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|tmp_x[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.537      ;
+; -0.501 ; cal_log2:dut|index[6]           ; cal_log2:dut|index[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.529      ;
+; -0.500 ; cal_log2:dut|index[3]           ; cal_log2:dut|index[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.536      ;
+; -0.491 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.523      ;
+; -0.491 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.523      ;
+; -0.491 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.523      ;
+; -0.491 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.523      ;
+; -0.491 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.523      ;
+; -0.491 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.523      ;
+; -0.491 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.523      ;
+; -0.491 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.523      ;
+; -0.491 ; cal_log2:dut|tmp_x[13]          ; cal_log2:dut|tmp_x[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.523      ;
+; -0.487 ; cal_log2:dut|index[5]           ; cal_log2:dut|index[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.515      ;
+; -0.487 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.523      ;
+; -0.487 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.523      ;
+; -0.487 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.523      ;
+; -0.487 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.523      ;
+; -0.487 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.523      ;
+; -0.487 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.523      ;
+; -0.487 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.523      ;
+; -0.487 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.523      ;
+; -0.487 ; cal_log2:dut|current_state.IDLE ; cal_log2:dut|tmp_x[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 1.523      ;
+; -0.482 ; cal_log2:dut|index[4]           ; cal_log2:dut|index[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 1.510      ;
+; -0.475 ; cal_log2:dut|index[1]           ; cal_log2:dut|index[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 1.507      ;
+; -0.470 ; cal_log2:dut|tmp_x[15]          ; cal_log2:dut|index[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.017     ; 1.485      ;
++--------+---------------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                 ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; cal_log2:dut|count[1]                 ; cal_log2:dut|count[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|count[3]                 ; cal_log2:dut|count[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|count[2]                 ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|tmp_x[15]                ; cal_log2:dut|tmp_x[15]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|tmp_x[14]                ; cal_log2:dut|tmp_x[14]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|current_state.FIND_K     ; cal_log2:dut|current_state.FIND_K     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|count[0]                 ; cal_log2:dut|count[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[0]                ; cal_log2:dut|log2_m[0]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[1]                ; cal_log2:dut|log2_m[1]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[2]                ; cal_log2:dut|log2_m[2]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[3]                ; cal_log2:dut|log2_m[3]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[4]                ; cal_log2:dut|log2_m[4]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[5]                ; cal_log2:dut|log2_m[5]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[6]                ; cal_log2:dut|log2_m[6]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[7]                ; cal_log2:dut|log2_m[7]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[8]                ; cal_log2:dut|log2_m[8]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[9]                ; cal_log2:dut|log2_m[9]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[10]               ; cal_log2:dut|log2_m[10]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cal_log2:dut|log2_m[11]               ; cal_log2:dut|log2_m[11]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.240 ; cal_log2:dut|log2_m[13]               ; cal_log2:dut|log2_m[13]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.392      ;
+; 0.243 ; cal_log2:dut|log2_m[14]               ; cal_log2:dut|log2_m[14]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.395      ;
+; 0.251 ; cal_log2:dut|log2_m[15]               ; cal_log2:dut|log2_m[15]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.403      ;
+; 0.257 ; cal_log2:dut|current_state.FIND_K     ; cal_log2:dut|current_state.SQUARE     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.409      ;
+; 0.272 ; cal_log2:dut|count[0]                 ; cal_log2:dut|count[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.424      ;
+; 0.302 ; cal_log2:dut|tmp_x[0]                 ; cal_log2:dut|tmp_x[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.454      ;
+; 0.335 ; cal_log2:dut|current_state.SQUARE     ; cal_log2:dut|current_state.DIV_BIT    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.487      ;
+; 0.363 ; cal_log2:dut|current_state.IDLE       ; cal_log2:dut|current_state.PRE_FIND_K ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.516      ;
+; 0.372 ; cal_log2:dut|index[3]                 ; cal_log2:dut|index[15]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.381 ; cal_log2:dut|tmp_x[4]                 ; cal_log2:dut|tmp_x[5]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.533      ;
+; 0.381 ; cal_log2:dut|log2_m[12]               ; cal_log2:dut|log2_m[12]               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.533      ;
+; 0.410 ; cal_log2:dut|tmp_x[9]                 ; cal_log2:dut|tmp_x[10]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.562      ;
+; 0.433 ; cal_log2:dut|count[2]                 ; cal_log2:dut|count[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.585      ;
+; 0.439 ; cal_log2:dut|log2_m[2]                ; cal_log2:dut|y_o[2]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.589      ;
+; 0.440 ; cal_log2:dut|tmp_x[2]                 ; cal_log2:dut|tmp_x[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 0.588      ;
+; 0.440 ; cal_log2:dut|log2_m[0]                ; cal_log2:dut|y_o[0]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.593      ;
+; 0.444 ; cal_log2:dut|log2_m[9]                ; cal_log2:dut|y_o[9]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.594      ;
+; 0.445 ; cal_log2:dut|log2_m[1]                ; cal_log2:dut|y_o[1]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.595      ;
+; 0.447 ; cal_log2:dut|log2_m[3]                ; cal_log2:dut|y_o[3]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.597      ;
+; 0.447 ; cal_log2:dut|log2_m[5]                ; cal_log2:dut|y_o[5]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.597      ;
+; 0.448 ; cal_log2:dut|log2_m[4]                ; cal_log2:dut|y_o[4]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.598      ;
+; 0.448 ; cal_log2:dut|log2_m[10]               ; cal_log2:dut|y_o[10]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.598      ;
+; 0.449 ; cal_log2:dut|log2_m[8]                ; cal_log2:dut|y_o[8]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.599      ;
+; 0.454 ; cal_log2:dut|log2_m[7]                ; cal_log2:dut|y_o[7]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.607      ;
+; 0.454 ; cal_log2:dut|log2_m[13]               ; cal_log2:dut|y_o[13]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.604      ;
+; 0.456 ; cal_log2:dut|log2_m[11]               ; cal_log2:dut|y_o[11]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.609      ;
+; 0.457 ; cal_log2:dut|tmp_x[8]                 ; cal_log2:dut|tmp_x[9]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.609      ;
+; 0.457 ; cal_log2:dut|index[10]                ; cal_log2:dut|y_o[10]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.614      ;
+; 0.462 ; cal_log2:dut|index[0]                 ; cal_log2:dut|index[12]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.614      ;
+; 0.463 ; cal_log2:dut|current_state.IDLE       ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.616      ;
+; 0.479 ; cal_log2:dut|current_state.PRE_FIND_K ; cal_log2:dut|current_state.FIND_K     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.633      ;
+; 0.489 ; cal_log2:dut|current_state.FIND_LOG2  ; cal_log2:dut|count[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.639      ;
+; 0.490 ; cal_log2:dut|tmp_x[1]                 ; cal_log2:dut|tmp_x[0]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.642      ;
+; 0.490 ; cal_log2:dut|count[3]                 ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.642      ;
+; 0.492 ; cal_log2:dut|tmp_x[5]                 ; cal_log2:dut|tmp_x[4]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.644      ;
+; 0.493 ; cal_log2:dut|tmp_x[10]                ; cal_log2:dut|tmp_x[11]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.649      ;
+; 0.500 ; cal_log2:dut|current_state.FIND_K     ; cal_log2:dut|tmp_x[9]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.653      ;
+; 0.545 ; cal_log2:dut|tmp_x[1]                 ; cal_log2:dut|tmp_x[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.697      ;
+; 0.545 ; cal_log2:dut|count[1]                 ; cal_log2:dut|count[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.697      ;
+; 0.545 ; cal_log2:dut|count[0]                 ; cal_log2:dut|count[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.697      ;
+; 0.545 ; cal_log2:dut|tmp_x[3]                 ; cal_log2:dut|tmp_x[4]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.697      ;
+; 0.550 ; cal_log2:dut|tmp_x[14]                ; cal_log2:dut|current_state.FIND_K     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.701      ;
+; 0.551 ; cal_log2:dut|tmp_x[6]                 ; cal_log2:dut|tmp_x[7]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.707      ;
+; 0.551 ; cal_log2:dut|index[2]                 ; cal_log2:dut|index[14]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 0.699      ;
+; 0.553 ; cal_log2:dut|count[1]                 ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.705      ;
+; 0.554 ; cal_log2:dut|index[15]                ; cal_log2:dut|y_o[15]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.009      ; 0.715      ;
+; 0.557 ; cal_log2:dut|tmp_sq[25]               ; cal_log2:dut|tmp_x[13]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.051     ; 0.658      ;
+; 0.560 ; cal_log2:dut|count[0]                 ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.712      ;
+; 0.564 ; cal_log2:dut|index[6]                 ; cal_log2:dut|y_o[6]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.721      ;
+; 0.570 ; cal_log2:dut|log2_m[12]               ; cal_log2:dut|y_o[12]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 0.718      ;
+; 0.570 ; cal_log2:dut|index[1]                 ; cal_log2:dut|index[13]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 0.718      ;
+; 0.571 ; cal_log2:dut|tmp_x[14]                ; cal_log2:dut|current_state.SQUARE     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.722      ;
+; 0.572 ; cal_log2:dut|log2_m[14]               ; cal_log2:dut|y_o[14]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 0.720      ;
+; 0.575 ; cal_log2:dut|log2_m[0]                ; cal_log2:dut|y_o[1]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.728      ;
+; 0.577 ; cal_log2:dut|count[2]                 ; cal_log2:dut|log2_m[6]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.729      ;
+; 0.577 ; cal_log2:dut|log2_m[2]                ; cal_log2:dut|y_o[3]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.727      ;
+; 0.578 ; cal_log2:dut|tmp_sq[24]               ; cal_log2:dut|tmp_x[12]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.051     ; 0.679      ;
+; 0.578 ; cal_log2:dut|log2_m[6]                ; cal_log2:dut|y_o[6]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.005     ; 0.725      ;
+; 0.579 ; cal_log2:dut|index[2]                 ; cal_log2:dut|y_o[2]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.736      ;
+; 0.580 ; cal_log2:dut|index[4]                 ; cal_log2:dut|y_o[4]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.737      ;
+; 0.581 ; cal_log2:dut|index[0]                 ; cal_log2:dut|y_o[0]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.738      ;
+; 0.582 ; cal_log2:dut|log2_m[9]                ; cal_log2:dut|y_o[10]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.732      ;
+; 0.582 ; cal_log2:dut|index[7]                 ; cal_log2:dut|y_o[7]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.739      ;
+; 0.583 ; cal_log2:dut|log2_m[1]                ; cal_log2:dut|y_o[2]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.733      ;
+; 0.585 ; cal_log2:dut|log2_m[3]                ; cal_log2:dut|y_o[4]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.735      ;
+; 0.585 ; cal_log2:dut|log2_m[15]               ; cal_log2:dut|y_o[15]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 0.733      ;
+; 0.585 ; cal_log2:dut|log2_m[5]                ; cal_log2:dut|y_o[6]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.735      ;
+; 0.586 ; cal_log2:dut|log2_m[4]                ; cal_log2:dut|y_o[5]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.736      ;
+; 0.586 ; cal_log2:dut|log2_m[10]               ; cal_log2:dut|y_o[11]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.736      ;
+; 0.587 ; cal_log2:dut|log2_m[8]                ; cal_log2:dut|y_o[9]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.737      ;
+; 0.590 ; cal_log2:dut|index[1]                 ; cal_log2:dut|y_o[1]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.747      ;
+; 0.592 ; cal_log2:dut|log2_m[13]               ; cal_log2:dut|y_o[14]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.742      ;
+; 0.595 ; cal_log2:dut|current_state.FIND_LOG2  ; cal_log2:dut|count[1]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.745      ;
+; 0.596 ; cal_log2:dut|log2_m[11]               ; cal_log2:dut|y_o[12]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.749      ;
+; 0.597 ; cal_log2:dut|index[10]                ; cal_log2:dut|y_o[11]                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.754      ;
+; 0.597 ; cal_log2:dut|current_state.IDLE       ; cal_log2:dut|log2_m[6]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.750      ;
+; 0.598 ; cal_log2:dut|current_state.FIND_LOG2  ; cal_log2:dut|count[3]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.748      ;
+; 0.598 ; cal_log2:dut|current_state.FIND_LOG2  ; cal_log2:dut|count[2]                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 0.748      ;
+; 0.600 ; cal_log2:dut|tmp_x[13]                ; cal_log2:dut|current_state.FIND_K     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.751      ;
+; 0.608 ; cal_log2:dut|count[2]                 ; cal_log2:dut|current_state.FIND_LOG2  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.762      ;
+; 0.610 ; cal_log2:dut|log2_m[0]                ; cal_log2:dut|y_o[2]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.763      ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                                ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------------------+
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[12]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[12]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[13]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[13]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[14]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[14]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[15]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[15]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[16]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[16]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[17]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[17]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[18]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[18]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[19]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[19]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[20]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[20]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[21]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[21]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[22]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[22]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[23]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[23]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[24]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[24]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[25]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[25]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[26]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[26]               ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[27]               ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|tmp_sq[27]               ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|count[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|count[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|count[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|count[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|count[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|count[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|count[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|count[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.DIV_BIT    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.DIV_BIT    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.FIND_K     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.FIND_K     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.FIND_LOG2  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.FIND_LOG2  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.IDLE       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.IDLE       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.PRE_FIND_K ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.PRE_FIND_K ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.SQUARE     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|current_state.SQUARE     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[10]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[10]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[11]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[11]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[12]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[12]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[13]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[13]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[14]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[14]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[15]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[15]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[4]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[4]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[5]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[5]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[6]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[6]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[7]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[7]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[8]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[8]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|index[9]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|index[9]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[10]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[10]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[11]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[11]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[12]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[12]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[13]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[13]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[14]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[14]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[15]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[15]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; cal_log2:dut|log2_m[1]                ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 2.962  ; 2.962  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; 0.359  ; 0.359  ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 0.471  ; 0.471  ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; 0.103  ; 0.103  ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; 0.132  ; 0.132  ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; -0.420 ; -0.420 ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; 0.182  ; 0.182  ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; -0.353 ; -0.353 ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; 1.089  ; 1.089  ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; 0.345  ; 0.345  ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; 0.854  ; 0.854  ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; 0.076  ; 0.076  ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; 0.491  ; 0.491  ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; 0.259  ; 0.259  ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; 2.938  ; 2.938  ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; 2.962  ; 2.962  ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; 2.836  ; 2.836  ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 0.540  ; 0.540  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; -0.239 ; -0.239 ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; -0.351 ; -0.351 ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; 0.017  ; 0.017  ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; -0.012 ; -0.012 ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; 0.540  ; 0.540  ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; -0.062 ; -0.062 ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; 0.473  ; 0.473  ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; -0.969 ; -0.969 ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; -0.225 ; -0.225 ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; -0.734 ; -0.734 ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; 0.044  ; 0.044  ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; -0.371 ; -0.371 ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; -0.139 ; -0.139 ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; -2.818 ; -2.818 ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; -2.842 ; -2.842 ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; -2.716 ; -2.716 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 4.580 ; 4.580 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 4.580 ; 4.580 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 4.579 ; 4.579 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 4.508 ; 4.508 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 4.251 ; 4.251 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 4.524 ; 4.524 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 4.555 ; 4.555 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 4.510 ; 4.510 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 4.516 ; 4.516 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 3.765 ; 3.765 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 3.799 ; 3.799 ; Rise       ; CLOCK_50        ;
+;  LEDR[10] ; CLOCK_50   ; 3.772 ; 3.772 ; Rise       ; CLOCK_50        ;
+;  LEDR[11] ; CLOCK_50   ; 3.771 ; 3.771 ; Rise       ; CLOCK_50        ;
+;  LEDR[12] ; CLOCK_50   ; 3.796 ; 3.796 ; Rise       ; CLOCK_50        ;
+;  LEDR[13] ; CLOCK_50   ; 3.799 ; 3.799 ; Rise       ; CLOCK_50        ;
+;  LEDR[14] ; CLOCK_50   ; 3.927 ; 3.927 ; Rise       ; CLOCK_50        ;
+;  LEDR[15] ; CLOCK_50   ; 3.921 ; 3.921 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 3.765 ; 3.765 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 4.580 ; 4.580 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 4.579 ; 4.579 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 4.508 ; 4.508 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 4.251 ; 4.251 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 4.524 ; 4.524 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 4.555 ; 4.555 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 4.510 ; 4.510 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 4.516 ; 4.516 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 3.765 ; 3.765 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 3.799 ; 3.799 ; Rise       ; CLOCK_50        ;
+;  LEDR[10] ; CLOCK_50   ; 3.772 ; 3.772 ; Rise       ; CLOCK_50        ;
+;  LEDR[11] ; CLOCK_50   ; 3.771 ; 3.771 ; Rise       ; CLOCK_50        ;
+;  LEDR[12] ; CLOCK_50   ; 3.796 ; 3.796 ; Rise       ; CLOCK_50        ;
+;  LEDR[13] ; CLOCK_50   ; 3.799 ; 3.799 ; Rise       ; CLOCK_50        ;
+;  LEDR[14] ; CLOCK_50   ; 3.927 ; 3.927 ; Rise       ; CLOCK_50        ;
+;  LEDR[15] ; CLOCK_50   ; 3.921 ; 3.921 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.744   ; 0.215 ; N/A      ; N/A     ; -1.519              ;
+;  CLOCK_50        ; -2.744   ; 0.215 ; N/A      ; N/A     ; -1.519              ;
+; Design-wide TNS  ; -173.329 ; 0.0   ; 0.0      ; 0.0     ; -123.988            ;
+;  CLOCK_50        ; -173.329 ; 0.000 ; N/A      ; N/A     ; -123.988            ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 5.766  ; 5.766  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; 1.347  ; 1.347  ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 1.626  ; 1.626  ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; 0.778  ; 0.778  ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; 1.138  ; 1.138  ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; -0.171 ; -0.171 ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; 1.254  ; 1.254  ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; -0.022 ; -0.022 ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; 2.750  ; 2.750  ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; 1.130  ; 1.130  ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; 2.267  ; 2.267  ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; 0.680  ; 0.680  ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; 1.618  ; 1.618  ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; 1.076  ; 1.076  ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; 5.738  ; 5.738  ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; 5.766  ; 5.766  ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; 5.433  ; 5.433  ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 0.540  ; 0.540  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; -0.239 ; -0.239 ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; -0.351 ; -0.351 ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; 0.017  ; 0.017  ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; -0.012 ; -0.012 ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; 0.540  ; 0.540  ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; -0.062 ; -0.062 ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; 0.473  ; 0.473  ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; -0.969 ; -0.969 ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; -0.225 ; -0.225 ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; -0.734 ; -0.734 ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; 0.044  ; 0.044  ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; -0.371 ; -0.371 ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; -0.139 ; -0.139 ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; -2.818 ; -2.818 ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; -2.842 ; -2.842 ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; -2.716 ; -2.716 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 8.368 ; 8.368 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 8.364 ; 8.364 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 8.368 ; 8.368 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 8.273 ; 8.273 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 7.605 ; 7.605 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 8.284 ; 8.284 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 8.341 ; 8.341 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 8.267 ; 8.267 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 8.233 ; 8.233 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 6.639 ; 6.639 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 6.695 ; 6.695 ; Rise       ; CLOCK_50        ;
+;  LEDR[10] ; CLOCK_50   ; 6.648 ; 6.648 ; Rise       ; CLOCK_50        ;
+;  LEDR[11] ; CLOCK_50   ; 6.646 ; 6.646 ; Rise       ; CLOCK_50        ;
+;  LEDR[12] ; CLOCK_50   ; 6.685 ; 6.685 ; Rise       ; CLOCK_50        ;
+;  LEDR[13] ; CLOCK_50   ; 6.691 ; 6.691 ; Rise       ; CLOCK_50        ;
+;  LEDR[14] ; CLOCK_50   ; 6.948 ; 6.948 ; Rise       ; CLOCK_50        ;
+;  LEDR[15] ; CLOCK_50   ; 6.942 ; 6.942 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 3.765 ; 3.765 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 4.580 ; 4.580 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 4.579 ; 4.579 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 4.508 ; 4.508 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 4.251 ; 4.251 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 4.524 ; 4.524 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 4.555 ; 4.555 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 4.510 ; 4.510 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 4.516 ; 4.516 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 3.765 ; 3.765 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 3.799 ; 3.799 ; Rise       ; CLOCK_50        ;
+;  LEDR[10] ; CLOCK_50   ; 3.772 ; 3.772 ; Rise       ; CLOCK_50        ;
+;  LEDR[11] ; CLOCK_50   ; 3.771 ; 3.771 ; Rise       ; CLOCK_50        ;
+;  LEDR[12] ; CLOCK_50   ; 3.796 ; 3.796 ; Rise       ; CLOCK_50        ;
+;  LEDR[13] ; CLOCK_50   ; 3.799 ; 3.799 ; Rise       ; CLOCK_50        ;
+;  LEDR[14] ; CLOCK_50   ; 3.927 ; 3.927 ; Rise       ; CLOCK_50        ;
+;  LEDR[15] ; CLOCK_50   ; 3.921 ; 3.921 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 2043     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 2043     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 16    ; 16   ;
+; Unconstrained Input Port Paths  ; 16    ; 16   ;
+; Unconstrained Output Ports      ; 16    ; 16   ;
+; Unconstrained Output Port Paths ; 16    ; 16   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Mar 05 13:10:05 2023
+Info: Command: quartus_sta wrapper -c wrapper
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'wrapper.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.744
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.744      -173.329 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.423
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.423      -120.916 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.704
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.704       -23.966 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.519
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.519      -123.988 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4550 megabytes
+    Info: Processing ended: Sun Mar 05 13:10:09 2023
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:01
+
+

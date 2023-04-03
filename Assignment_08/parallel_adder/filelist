@@ -1,0 +1,3 @@
+src/parallel_adder.sv
+src/parallel_adder_4bit.sv
+src/FA.sv

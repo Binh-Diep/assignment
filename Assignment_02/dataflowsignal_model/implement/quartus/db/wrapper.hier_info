@@ -1,0 +1,22 @@
+|wrapper
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+LEDR[0] <= counterbit1:dut.Y_o
+LEDR[1] <= counterbit1:dut.Y_o
+
+
+|wrapper|counterbit1:dut
+A_i[0] => sum.IN1
+A_i[0] => carry.IN0
+A_i[0] => carry.IN0
+A_i[1] => sum.IN0
+A_i[1] => carry.IN0
+A_i[1] => carry.IN1
+A_i[2] => sum.IN1
+A_i[2] => carry.IN1
+A_i[2] => carry.IN1
+Y_o[0] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Y_o[1] <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+

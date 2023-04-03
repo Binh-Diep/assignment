@@ -1,0 +1,10 @@
+
+State Machine - |wrapper|multiplier:dut|current_state
+Name current_state.SEND current_state.CALC current_state.UPLOAD current_state.SHIFT current_state.LOAD current_state.PRE_BOOT current_state.INIT 
+current_state.INIT 0 0 0 0 0 0 0 
+current_state.PRE_BOOT 0 0 0 0 0 1 1 
+current_state.LOAD 0 0 0 0 1 0 1 
+current_state.SHIFT 0 0 0 1 0 0 1 
+current_state.UPLOAD 0 0 1 0 0 0 1 
+current_state.CALC 0 1 0 0 0 0 1 
+current_state.SEND 1 0 0 0 0 0 1 

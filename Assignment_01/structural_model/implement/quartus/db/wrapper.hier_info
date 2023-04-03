@@ -1,0 +1,55 @@
+|wrapper
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+LEDR[0] <= dec3to8:dut.Q0_no
+LEDR[1] <= dec3to8:dut.Q1_no
+LEDR[2] <= dec3to8:dut.Q2_no
+LEDR[3] <= dec3to8:dut.Q3_no
+LEDR[4] <= dec3to8:dut.Q4_no
+LEDR[5] <= dec3to8:dut.Q5_no
+LEDR[6] <= dec3to8:dut.Q6_no
+LEDR[7] <= dec3to8:dut.Q7_no
+
+
+|wrapper|dec3to8:dut
+E1_ni => WideAnd0.IN0
+E2_ni => WideAnd0.IN1
+E3_i => WideAnd0.IN2
+A0_i => WideAnd2.IN1
+A0_i => WideAnd4.IN1
+A0_i => WideAnd6.IN1
+A0_i => WideAnd8.IN1
+A0_i => WideAnd1.IN1
+A0_i => WideAnd3.IN1
+A0_i => WideAnd5.IN1
+A0_i => WideAnd7.IN1
+A1_i => WideAnd3.IN2
+A1_i => WideAnd4.IN2
+A1_i => WideAnd7.IN2
+A1_i => WideAnd8.IN2
+A1_i => WideAnd1.IN2
+A1_i => WideAnd2.IN2
+A1_i => WideAnd5.IN2
+A1_i => WideAnd6.IN2
+A2_i => WideAnd5.IN3
+A2_i => WideAnd6.IN3
+A2_i => WideAnd7.IN3
+A2_i => WideAnd8.IN3
+A2_i => WideAnd1.IN3
+A2_i => WideAnd2.IN3
+A2_i => WideAnd3.IN3
+A2_i => WideAnd4.IN3
+Q0_no <= WideAnd1.DB_MAX_OUTPUT_PORT_TYPE
+Q1_no <= WideAnd2.DB_MAX_OUTPUT_PORT_TYPE
+Q2_no <= WideAnd3.DB_MAX_OUTPUT_PORT_TYPE
+Q3_no <= WideAnd4.DB_MAX_OUTPUT_PORT_TYPE
+Q4_no <= WideAnd5.DB_MAX_OUTPUT_PORT_TYPE
+Q5_no <= WideAnd6.DB_MAX_OUTPUT_PORT_TYPE
+Q6_no <= WideAnd7.DB_MAX_OUTPUT_PORT_TYPE
+Q7_no <= WideAnd8.DB_MAX_OUTPUT_PORT_TYPE
+
+

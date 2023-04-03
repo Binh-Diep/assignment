@@ -1,0 +1,7 @@
+
+State Machine - |wrapper|serial_adder:dut|current_state
+Name current_state.END current_state.PROCESS current_state.LOAD current_state.INIT 
+current_state.INIT 0 0 0 0 
+current_state.LOAD 0 0 1 1 
+current_state.PROCESS 0 1 0 1 
+current_state.END 1 0 0 1 

@@ -1,0 +1,19 @@
+|wrapper
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+LEDR[0] <= moore:dut.valid_o
+LEDR[1] <= <GND>
+CLOCK_50 => CLOCK_50.IN1
+
+
+|wrapper|moore:dut
+clk_i => current_state~1.DATAIN
+rst_ni => current_state~3.DATAIN
+string_i => Selector1.IN2
+string_i => Selector2.IN1
+string_i => next_state.D1010.DATAB
+string_i => Selector0.IN1
+string_i => next_state.D10.DATAB
+valid_o <= valid_o.DB_MAX_OUTPUT_PORT_TYPE
+
+

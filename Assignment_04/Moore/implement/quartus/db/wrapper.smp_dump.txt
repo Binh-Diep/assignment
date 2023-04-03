@@ -1,0 +1,8 @@
+
+State Machine - |wrapper|moore:dut|current_state
+Name current_state.D101 current_state.D10 current_state.D1 current_state.IDLE current_state.D1010 
+current_state.IDLE 0 0 0 0 0 
+current_state.D1 0 0 1 1 0 
+current_state.D10 0 1 0 1 0 
+current_state.D101 1 0 0 1 0 
+current_state.D1010 0 0 0 1 1 

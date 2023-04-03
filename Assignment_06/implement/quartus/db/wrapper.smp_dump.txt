@@ -1,0 +1,9 @@
+
+State Machine - |wrapper|cal_log2:dut|current_state
+Name current_state.FIND_LOG2 current_state.DIV_BIT current_state.SQUARE current_state.FIND_K current_state.PRE_FIND_K current_state.IDLE 
+current_state.IDLE 0 0 0 0 0 0 
+current_state.PRE_FIND_K 0 0 0 0 1 1 
+current_state.FIND_K 0 0 0 1 0 1 
+current_state.SQUARE 0 0 1 0 0 1 
+current_state.DIV_BIT 0 1 0 0 0 1 
+current_state.FIND_LOG2 1 0 0 0 0 1 

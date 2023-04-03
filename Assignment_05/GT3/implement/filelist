@@ -1,0 +1,3 @@
+src/min_finder.sv
+src/decoder4to16.sv
+src/encoder16to4.sv
